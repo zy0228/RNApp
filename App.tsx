@@ -15,12 +15,13 @@ import {
   Text,
   useColorScheme,
   View,
+  Alert,
 } from 'react-native';
 
+import Button from './components/button';
 import {
   Colors,
   DebugInstructions,
-  Header,
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
@@ -68,10 +69,15 @@ function App(): React.JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
+      <Button
+        title="Click to see alert"
+        backgroundColor="blue"
+        color="red"
+        onPress={() => Alert.alert('Alert Title', 'My Alert Msg')}
+      />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
